@@ -47,6 +47,7 @@ Things you may want to cover:
 - has_many :favorites
 - has_many :comments
 - has_many :tags, through:  :post_tags
+- has_many :post_tags
 
 ## usersテーブル
 |Column|Type|Options|
