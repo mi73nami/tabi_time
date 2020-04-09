@@ -102,3 +102,12 @@ Things you may want to cover:
 ### Association
 - has_many :posts, through:  :post_tags
 - has_many :post_tags
+
+## post_tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|post_id|integer|null: false, foreign_key: true|
+|tag_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :tag
