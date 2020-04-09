@@ -83,3 +83,13 @@ Things you may want to cover:
 ### Association
 - belongs_to :post
 - belongs_to :user
+
+## commentsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text|null: false|
+|post_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :post
+- belongs_to :user
