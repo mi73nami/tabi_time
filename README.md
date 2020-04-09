@@ -127,3 +127,13 @@ Things you may want to cover:
 - has_many :posts
 - has_many :countries
 - has_many :cities
+
+## countriesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|erea_id|integer|null: false, foreign_key: true|
+### Association
+- has_many :posts
+- has_many :cities
+- belongs_to :erea
