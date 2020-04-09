@@ -65,3 +65,13 @@ Things you may want to cover:
 - has_many :followings, through: :relationships, source: :follow
 - has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
 - has_many :followers, through: :reverse_of_relationships, source: :user
+
+## relationshipsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|follow_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, foreign_key: true|
+### Association
+- belongs_to :user
+- belongs_to :follow, class_name: 'User'
+
