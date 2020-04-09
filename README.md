@@ -137,3 +137,14 @@ Things you may want to cover:
 - has_many :posts
 - has_many :cities
 - belongs_to :erea
+
+## citiesテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+|erea_id|integer|null: false, foreign_key: true|
+|country_id|integer|null: false, foreign_key: true|
+### Association
+- has_many :posts
+- belongs_to :country
+- belongs_to :erea
