@@ -118,3 +118,12 @@ Things you may want to cover:
 |name|string|null: false|
 ### Association
 - has_many :posts
+
+## ereasテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :posts
+- has_many :countries
+- has_many :cities
