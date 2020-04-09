@@ -93,3 +93,11 @@ Things you may want to cover:
 ### Association
 - belongs_to :post
 - belongs_to :user
+
+## tagsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false|
+### Association
+- has_many :posts, through:  :post_tags
+- has_many :post_tags
