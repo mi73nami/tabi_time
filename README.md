@@ -47,3 +47,21 @@ Things you may want to cover:
 - has_many :favorites
 - has_many :comments
 - has_many :tags, through:  :post_tags
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|username|string|null: false, unique:true|
+|email|string|null: false, unique:true|
+|password|string|null: false|
+|nickname|string|null: false|
+|biography|text||
+|userimage|string||
+### Association
+- has_many :posts
+- has_many :favorites
+- has_many :comments
+- has_many :relationships
+- has_many :followings, through: :relationships, source: :follow
+- has_many :reverse_of_relationships, class_name: 'Relationship', foreign_key: 'follow_id'
+- has_many :followers, through: :reverse_of_relationships, source: :user
