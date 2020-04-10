@@ -8,4 +8,15 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    .header
+      .header__contents
+        .site__top
+          %h1.site__top--title たびたいむ
+          %p.site__top--catch-copy 気軽に旅の思い出を残そう
+        .user-info
+          .user-info__current
+            = link_to "新規登録", "#"
+          .user-info__status
+            = link_to "ログイン", "#"
+      
     = yield

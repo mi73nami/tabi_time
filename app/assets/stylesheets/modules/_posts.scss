@@ -1,3 +1,45 @@
 * {
   box-sizing: border-box;
 }
+
+.header{
+  height: 60px;
+  width: 100%;
+  background-color: red;
+  position:fixed;
+  &__contents{
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.site__top{
+  display: flex;
+  margin-left: 15%;
+  &--title{
+    font-size: 30px;
+    line-height: 60px;
+    padding-right: 30px;
+  }
+  &--catch-copy{
+    font-size: 15px;
+    line-height: 90px;
+  }
+}
+
+.user-info{
+  display: flex;
+  margin-right: 15%;
+  &__current{
+    line-height: 60px;
+    padding-right: 30px;
+  }
+  &__status{
+    line-height: 60px;
+  }
+}
+
+a{
+  text-decoration: none;
+  color: grey;
+}
