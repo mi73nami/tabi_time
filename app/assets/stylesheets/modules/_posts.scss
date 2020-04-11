@@ -6,7 +6,6 @@
   height: 60px;
   width: 100%;
   background-color: red;
-  position:fixed;
   &__contents{
     display: flex;
     justify-content: space-between;
@@ -23,7 +22,7 @@
   }
   &--catch-copy{
     font-size: 15px;
-    line-height: 90px;
+    line-height: 60px;
   }
 }
 
@@ -41,13 +40,13 @@
 
 .content{
   display: flex;
+  height: 100vh;
+  overflow: scroll;
   .left-content{
-    height: 100vh;
     width: 15%;
     background-color: green;
   }
   .main{
-    height: 100vh;
     width: 85%;
     background-color: greenyellow;
   }
