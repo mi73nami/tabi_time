@@ -8,4 +8,21 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    = yield
+    .wrapper
+      .header
+        .header__contents
+          .site__top
+            %h1.site__top--title たびたいむ
+            %p.site__top--catch-copy 気軽に旅の思い出を残そう
+          .user-info
+            .user-info__current
+              = link_to "新規投稿", "#"
+            .user-info__status
+              = link_to "ログアウト", "#"
+      .content
+        .left-content
+        .main
+          .main__contents
+            = yield
+          .footer
+            %p.footer-copyright Copyright © 2020 Tabi-Time All Rights Reserved.
