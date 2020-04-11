@@ -12,4 +12,80 @@
   height: 300px;
   width: 100%;
   background-color: mediumorchid;
+  .category{
+  height: 40px;
+  width: 100%;
+  background-color: pink;
+  font-size: 17px;
+  text-align: center;
+  line-height: 40px;
+  }
+}
+
+.post{
+  height: 260px;
+  width: 50%;
+  background-color: royalblue;
+  display: flex;
+  &__image{
+    height: 100%;
+    width: 60%;
+    background-color: sandybrown;
+  }
+  &__info{
+    height: 100%;
+    width: 40%;
+    background-color: seagreen;
+    &--user{
+      height: 25%;
+      width: 100%;
+      background-color: skyblue;
+      display: flex;
+      .userimage{
+        height: 100%;
+        width: 75px;
+        background-color: yellowgreen;
+      }
+      .user-status{
+        height: 100%;
+        width: calc(100% - 75px);
+        background-color: slateblue;
+        .username{
+          height: 50%;
+          width: 100%;
+          background-color: indianred;
+        }
+        .nickname{
+          height: 50%;
+          width: 100%;
+          background-color: olive;
+        }
+      }
+    }
+    &--title{
+      height: 15%;
+      width: 100%;
+      background-color: rosybrown;
+    }
+    &--status{
+      height: 25%;
+      width: 100%;
+      background-color: tan;
+      .post-category{
+        height: 50%;
+        width: 100%;
+        background-color: orangered;
+      }
+      .post-erea{
+        height: 50%;
+        width: 100%;
+        background-color: brown;
+      }
+    }
+    &--tags{
+      height: 35%;
+      width: 100%;
+      background-color: violet;
+    }
+  }
 }
