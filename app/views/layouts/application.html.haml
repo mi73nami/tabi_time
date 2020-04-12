@@ -12,11 +12,12 @@
       .header
         .header__contents
           .site__top
-            %h1.site__top--title たびたいむ
+            %h1.site__top--title 
+              =link_to "たびたいむ", "/"
             %p.site__top--catch-copy 気軽に旅の思い出を残そう
           .user-info
             .user-info__current
-              = link_to "新規投稿", "#"
+              = link_to "新規投稿", "/posts/new"
             .user-info__status
               = link_to "ログアウト", "#"
       .content

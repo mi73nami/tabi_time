@@ -1,0 +1,120 @@
+.new-post-page{
+  display: flex;
+}
+
+.new-post{
+  height: 1000px;
+  width: 70%;
+  background-color: cornflowerblue;
+  &__heading{
+    height: 50px;
+    width: 100%;
+    font-size: 25px;
+    background-color: crimson;
+    line-height: 50px;
+    text-align: center;
+  }
+  .post-form{
+    height: 950px;
+    width: 100%;
+    background-color: darkblue;
+  }
+}
+
+.new__image{
+  height: 400px;
+  width: 100%;
+  background-color: darkgreen;
+}
+
+.new__title{
+  height: 50px;
+  width: 100%;
+  background-color: darkkhaki;
+}
+
+.select-new{
+  height: 50px;
+  width: 100%;
+  background-color: darkorange;
+}
+
+.new__tags{
+  height: 50px;
+  width: 100%;
+  background-color: darkseagreen;
+}
+
+.new__money{
+  height: 30px;
+  width: 100%;
+  background-color: darkslategray;
+}
+
+.new__adress{
+  height: 30px;
+  width: 100%;
+  background-color: darkviolet;
+}
+
+.new__text{
+  height: 300px;
+  width: 100%;
+  background-color: deepskyblue;
+}
+
+.new__submit{
+  height: 40px;
+  width: 100%;
+  background-color: lightcoral;
+}
+
+.profile{
+  height: 500px;
+  width: 30%;
+  background-color: lightsalmon;
+  &__user{
+    height: 100px;
+    width: 100%;
+    background-color: lightsteelblue;
+    display: flex;
+    &--image{
+      height: 100%;
+      width: 110px;
+      background-color: limegreen;
+    }
+    &--status{
+      height: 100%;
+      width: calc(100% - 110px);
+      background-color: magenta;
+      .user-info__username{
+        height: 50%;
+        width: 100%;
+        background-color: mediumslateblue;
+      }
+      .user-info__nickname{
+        height: 50%;
+        width: 100%;
+        background-color: goldenrod;
+      }
+    }
+  }
+}
+
+.user-connection{
+  height: 100px;
+  width: 100%;
+  background-color: greenyellow;
+  display: flex;
+  &__list{
+    height: 100%;
+    width: 33%;
+    background-color: indianred;
+  }
+}
+
+.profile__biography{
+  height: 150px;
+  width: 100%;
+  background-color: khaki;
+}
