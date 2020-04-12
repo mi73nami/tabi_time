@@ -1,3 +1,7 @@
+.new-post-page{
+  display: flex;
+}
+
 .new-post{
   height: 1000px;
   width: 70%;
@@ -63,4 +67,54 @@
   height: 40px;
   width: 100%;
   background-color: lightcoral;
+}
+
+.profile{
+  height: 500px;
+  width: 30%;
+  background-color: lightsalmon;
+  &__user{
+    height: 100px;
+    width: 100%;
+    background-color: lightsteelblue;
+    display: flex;
+    &--image{
+      height: 100%;
+      width: 110px;
+      background-color: limegreen;
+    }
+    &--status{
+      height: 100%;
+      width: calc(100% - 110px);
+      background-color: magenta;
+      .user-info__username{
+        height: 50%;
+        width: 100%;
+        background-color: mediumslateblue;
+      }
+      .user-info__nickname{
+        height: 50%;
+        width: 100%;
+        background-color: goldenrod;
+      }
+    }
+  }
+}
+
+.user-connection{
+  height: 100px;
+  width: 100%;
+  background-color: greenyellow;
+  display: flex;
+  &__list{
+    height: 100%;
+    width: 33%;
+    background-color: indianred;
+  }
+}
+
+.profile__biography{
+  height: 150px;
+  width: 100%;
+  background-color: khaki;
 }
