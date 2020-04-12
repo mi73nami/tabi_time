@@ -1,0 +1,66 @@
+.new-post{
+  height: 1000px;
+  width: 70%;
+  background-color: cornflowerblue;
+  &__heading{
+    height: 50px;
+    width: 100%;
+    font-size: 25px;
+    background-color: crimson;
+    line-height: 50px;
+    text-align: center;
+  }
+  .post-form{
+    height: 950px;
+    width: 100%;
+    background-color: darkblue;
+  }
+}
+
+.new__image{
+  height: 400px;
+  width: 100%;
+  background-color: darkgreen;
+}
+
+.new__title{
+  height: 50px;
+  width: 100%;
+  background-color: darkkhaki;
+}
+
+.select-new{
+  height: 50px;
+  width: 100%;
+  background-color: darkorange;
+}
+
+.new__tags{
+  height: 50px;
+  width: 100%;
+  background-color: darkseagreen;
+}
+
+.new__money{
+  height: 30px;
+  width: 100%;
+  background-color: darkslategray;
+}
+
+.new__adress{
+  height: 30px;
+  width: 100%;
+  background-color: darkviolet;
+}
+
+.new__text{
+  height: 300px;
+  width: 100%;
+  background-color: deepskyblue;
+}
+
+.new__submit{
+  height: 40px;
+  width: 100%;
+  background-color: lightcoral;
+}

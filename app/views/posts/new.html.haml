@@ -1,0 +1,20 @@
+.new-post
+  %h2.new-post__heading 新規投稿
+  %form.post-form
+    %input.new__image{type:"file", accept:"image/*"}
+    %input.new__title{name:"title", placeholder:"タイトル", type:"string"}
+    .select-new
+      %select.select-new__category{name:"category"}
+        %option{value:"カテゴリを選択してください"}カテゴリを選択してください
+      %select.select-new__erea{name:"erea"}
+        %option{value:"エリアを選択してください"}エリアを選択してください
+      %select.select-new__country{name:"country"}
+        %option{value:"国を選択してください"}国を選択してください
+      %select.select-new__city{name:"city"}
+        %option{value:"都市を選択してください"}都市を選択してください
+    %input.new__tags{name:"tags", type:"text"}
+    %input.new__money{name:"money", type:"string"}
+    %input.new__adress{name:"adress", type:"text"}
+    %input.new__text{name:"text", type:"textarea"}
+    %input.new__submit{name:"submit", type:"submit"}
+.user-profile
