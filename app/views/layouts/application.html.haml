@@ -13,13 +13,19 @@
         .header__contents
           .site__top
             %h1.site__top--title 
-              =link_to "たびたいむ", "/"
+              =link_to "たびたいむ", root_path
             %p.site__top--catch-copy 気軽に旅の思い出を残そう
           .user-info
-            .user-info__current
-              = link_to "新規投稿", "/posts/new"
-            .user-info__status
-              = link_to "ログアウト", "#"
+            - if user_signed_in?
+              = link_to "新規投稿", new_post_path, class: "user-info__current"
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-info__status"
+            - else
+              = link_to "新規登録", new_user_registration_path, class: "user-info__current"
+              = link_to "ログイン", new_user_session_path, class: "user-info__status"
+      %p.notice
+        = notice
+      %p.alert
+        = alert
       .content
         .left-content
         .main
