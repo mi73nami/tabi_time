@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :set_category
   def index
   end
 
