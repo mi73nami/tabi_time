@@ -6,6 +6,8 @@
   height: 60px;
   width: 100%;
   background-color: red;
+  position:fixed;
+  z-index:99999;
   &__contents{
     display: flex;
     justify-content: space-between;
@@ -40,31 +42,26 @@
 
 .content{
   display: flex;
-  height: 100%;
+  height: calc(100vh - 60px);
   .left-content{
-    width: 15%;
+    width: 10%;
     background-color: green;
     height: 100vh;
   }
   .main{
-    width: 85%;
+    width: 75%;
     background-color: greenyellow;
     position: relative;
+    top: 60px;
     height: auto;
     &__contents{
       min-height: calc(100vh - 30px);
     }
   }
-}
-
-.footer{
-  height: 30px;
-  width: 100%;
-  background-color: hotpink;
-  .footer-copyright{
-    font-size: 10px;
-    line-height: 30px;
-    text-align: center;
+  .right-space{
+    height: 100vh;
+    width: 15%;
+    background-color: coral;
   }
 }
 
