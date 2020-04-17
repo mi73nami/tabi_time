@@ -1,10 +1,12 @@
 .new-post-page
   .new-post
     %h2.new-post__heading 新規投稿
-    %form.post-form
-      = form_with(model:@post, local:true) do |form|
-        %input.new__image{type:"file", accept:"image/*"}
-        %input.new__title{name:"title", placeholder:"タイトル", type:"string"}
+    .post-form
+      = form_with model: @post, local: true, id:"new_post" do |form|
+        = form.label :image, class: 'select-image' do
+          = icon('far', 'image fa-10x', )
+          = form.file_field :image, style: "display: none;"
+        = form.text_field :title, class:"new__title", placeholder:"タイトル"
         .select-new
           = form.collection_select(:category_id, @category, :id, :name, {prompt: "カテゴリを入力してください"}, {class: "select-new__category"})
           -#%select.select-new__erea{name:"erea"}
@@ -14,10 +16,10 @@
           -#%select.select-new__city{name:"city"}
             -#%option{value:"都市を選択してください"}都市を選択してください
         -#%input.new__tags{name:"tags", type:"text"}
-        %input.new__money{name:"money", type:"string"}
-        %input.new__adress{name:"adress", type:"text"}
-        %input.new__text{name:"text", type:"textarea"}
-        %input.new__submit{name:"submit", type:"submit"}
+        = form.text_field :money, class:"new__money", placeholder:"観光スポットは入場料、お土産は金額、レストランやカフェ、ホテルは金額や相場などを入力するとわかりやすいです！"
+        = form.text_field :address, class:"new__address", placeholder:"お土産などは購入したお店を入力してください"
+        = form.text_field :text, placeholder: "文字を入力してください", class: "new__text"
+        = form.submit '投稿する', class: "new__submit"
   .profile
     .profile__user
       .profile__user--image
