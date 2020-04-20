@@ -1,16 +1,151 @@
-%h2.new-posts 新着記事
+%h2.new-posts ● N E W ●
 .categories
-  .category 観光スポット
-  .post
-    .post__image
-    .post__info
-      .post__info--user
-        .userimage
-        .user-status
-          %p.username @aaa
-          %p.nickname bbb
-      .post__info--title アメリカ行った
-      .post__info--status
-        .post-category カテゴリ:観光スポット
-        .post-erea 北米>アメリカ>シカゴ
-      .post__info--tags
+  .category
+    = link_to "観光スポット", "#"
+  .new-post__find2
+    - @posts_spot.each do |post_spot|
+      .post
+        = link_to "", post_path(post_spot.id)
+        .post__image
+          = image_tag post_spot.image.url(:thumb), class: 'show__image--top'
+        .post__info
+          .post__info--user
+            .userimage
+            .user-status
+              .nickname
+                = post_spot.user.nickname
+          .post__info--title
+            = post_spot.title
+          .post__info--status
+            .post-category 
+              = "カテゴリ：#{post_spot.category.name}"
+            -#.post-erea 北米>アメリカ>シカゴ
+          .post__info--tags
+          .post__info--time
+            %p.create-time
+              = post_spot.created_at.to_s(:datetime_jp)
+.categories
+  .category
+    = link_to "レストラン・カフェ", "#"
+  .new-post__find2
+    - @posts_restaurant.each do |post_restaurant|
+      .post
+        = link_to "", post_path(post_restaurant.id)
+        .post__image
+          = image_tag post_restaurant.image.url(:thumb), class: 'show__image--top'
+        .post__info
+          .post__info--user
+            .userimage
+            .user-status
+              .nickname
+                = post_restaurant.user.nickname
+          .post__info--title
+            = post_restaurant.title
+          .post__info--status
+            .post-category 
+              = "カテゴリ：#{post_restaurant.category.name}"
+            -#.post-erea 北米>アメリカ>シカゴ
+          .post__info--tags
+          .post__info--time
+            %p.create-time
+              = post_restaurant.created_at.to_s(:datetime_jp)
+.categories
+  .category
+    = link_to "ホテル", "#"
+  .new-post__find2
+    - @posts_hotel.each do |post_hotel|
+      .post
+        = link_to "", post_path(post_hotel.id)
+        .post__image
+          = image_tag post_hotel.image.url(:thumb), class: 'show__image--top'
+        .post__info
+          .post__info--user
+            .userimage
+            .user-status
+              .nickname
+                = post_hotel.user.nickname
+          .post__info--title
+            = post_hotel.title
+          .post__info--status
+            .post-category 
+              = "カテゴリ：#{post_hotel.category.name}"
+            -#.post-erea 北米>アメリカ>シカゴ
+          .post__info--tags
+          .post__info--time
+            %p.create-time
+              = post_hotel.created_at.to_s(:datetime_jp)
+.categories
+  .category
+    = link_to "ショップ", "#"
+  .new-post__find2
+    - @posts_shop.each do |post_shop|
+      .post
+        = link_to "", post_path(post_shop.id)
+        .post__image
+          = image_tag post_shop.image.url(:thumb), class: 'show__image--top'
+        .post__info
+          .post__info--user
+            .userimage
+            .user-status
+              .nickname
+                = post_shop.user.nickname
+          .post__info--title
+            = post_shop.title
+          .post__info--status
+            .post-category 
+              = "カテゴリ：#{post_shop.category.name}"
+            -#.post-erea 北米>アメリカ>シカゴ
+          .post__info--tags
+          .post__info--time
+            %p.create-time
+              = post_shop.created_at.to_s(:datetime_jp)
+.categories
+  .category
+    = link_to "お土産", "#"
+  .new-post__find2
+    - @posts_souvenir.each do |post_souvenir|
+      .post
+        = link_to "", post_path(post_souvenir.id)
+        .post__image
+          = image_tag post_souvenir.image.url(:thumb), class: 'show__image--top'
+        .post__info
+          .post__info--user
+            .userimage
+            .user-status
+              .nickname
+                = post_souvenir.user.nickname
+          .post__info--title
+            = post_souvenir.title
+          .post__info--status
+            .post-category 
+              = "カテゴリ：#{post_souvenir.category.name}"
+            -#.post-erea 北米>アメリカ>シカゴ
+          .post__info--tags
+          .post__info--time
+            %p.create-time
+              = post_souvenir.created_at.to_s(:datetime_jp)
+.categories
+  .category
+    = link_to "その他", "#"
+  .new-post__find2
+    - @posts_other.each do |post_other|
+      .post
+        = link_to "", post_path(post_other.id)
+        .post__image
+          = image_tag post_other.image.url(:thumb), class: 'show__image--top'
+        .post__info
+          .post__info--user
+            .userimage
+            .user-status
+              .nickname
+                = post_other.user.nickname
+          .post__info--title
+            = post_other.title
+          .post__info--status
+            .post-category 
+              = "カテゴリ：#{post_other.category.name}"
+            -#.post-erea 北米>アメリカ>シカゴ
+          .post__info--tags
+          .post__info--time
+            %p.create-time
+              = post_other.created_at.to_s(:datetime_jp)

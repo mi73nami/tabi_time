@@ -3,12 +3,17 @@
     %h2.new-post__heading 新規投稿
     .post-form
       = form_with model: @post, local: true, id:"new_post" do |form|
-        = form.label :image, class: 'select-image' do
-          = icon('far', 'image fa-10x', )
+        .new-image
+          = form.label :image, class: 'select-image' do
+            = icon('far', 'image fa-10x', class: 'image-icon')
           = form.file_field :image, style: "display: none;"
-        = form.text_field :title, class:"new__title", placeholder:"タイトル"
+        .new__title
+          %p.new__title--headline タイトル
+          = form.text_field :title, class:"new__title--form", placeholder:"12文字以内", maxlength:'12'
         .select-new
-          = form.collection_select(:category_id, @category, :id, :name, {prompt: "カテゴリを入力してください"}, {class: "select-new__category"})
+          .select-new__category
+            %p.select-new__category--headline カテゴリ
+            = form.collection_select(:category_id, @categories, :id, :name, {prompt: "カテゴリを選択してください"}, {class: "select-new__category--box"})
           -#%select.select-new__erea{name:"erea"}
             -#%option{value:"エリアを選択してください"}エリアを選択してください
           -#%select.select-new__country{name:"country"}
@@ -16,22 +21,16 @@
           -#%select.select-new__city{name:"city"}
             -#%option{value:"都市を選択してください"}都市を選択してください
         -#%input.new__tags{name:"tags", type:"text"}
-        = form.text_field :money, class:"new__money", placeholder:"観光スポットは入場料、お土産は金額、レストランやカフェ、ホテルは金額や相場などを入力するとわかりやすいです！"
-        = form.text_field :address, class:"new__address", placeholder:"お土産などは購入したお店を入力してください"
-        = form.text_field :text, placeholder: "文字を入力してください", class: "new__text"
-        = form.submit '投稿する', class: "new__submit"
-  .profile
-    .profile__user
-      .profile__user--image
-      .profile__user--status
-        %p.user-info__username @aaa
-        %p.user-info__nickname bbb
-    %ul.user-connection
-      %li.user-connection__list
-        %p.user-connection__list--follow フォロー
-      %li.user-connection__list
-        %p.user-connection__list--followers フォロワー
-      %li.user-connection__list
-        %p.user-connection__list--favorite お気に入り
-    .profile__biography
+        .new__money
+          %p.new__money--headline 金額
+          = form.text_field :money, class:"new__money--form", placeholder:"入場料・価格などを入力してください"
+        .new__address
+          %p.new__address--headline 住所
+          = form.text_field :address, class:"new__address--form", placeholder:"お土産などは購入したお店を入力してください"
+        .new__text
+          %p.new__text--headline 本文
+          = form.text_field :text, placeholder: "本文を入力してください", class: "new__text--form"
+        .new__submit
+          = form.submit '投稿する', class: "new__submit--btn"
+  = render partial: 'profile'
 

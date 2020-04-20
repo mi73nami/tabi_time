@@ -17,6 +17,7 @@
             %p.site__top--catch-copy 気軽に旅の思い出を残そう
           .user-info
             - if user_signed_in?
+              = link_to "マイページ", "/users/#{current_user.id}", class: "user-info__current"
               = link_to "新規投稿", new_post_path, class: "user-info__current"
               = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "user-info__status"
             - else

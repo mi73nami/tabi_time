@@ -2,12 +2,22 @@
   box-sizing: border-box;
 }
 
+html,body{
+  padding:0;
+  margin:0;
+  height: 100%;
+}
+
+.wrapper{
+ height: 100%;
+}
+
 .header{
   height: 60px;
   width: 100%;
-  background-color: red;
-  position:fixed;
-  z-index:99999;
+  background-color: $white;
+  position: fixed;
+  z-index:999999;
   &__contents{
     display: flex;
     justify-content: space-between;
@@ -43,25 +53,30 @@
 .content{
   display: flex;
   height: calc(100vh - 60px);
+  position: relative;
+  top: 60px;
+  background-color: $base-color2;
+  overflow: scroll;
   .left-content{
     width: 10%;
-    background-color: green;
-    height: 100vh;
+    background-color: $base-color2;
+    height: 100%;
   }
   .main{
     width: 75%;
-    background-color: greenyellow;
-    position: relative;
-    top: 60px;
+    background-color: $base-color2;
     height: auto;
     &__contents{
-      min-height: calc(100vh - 30px);
+      min-height: 100%;
+      position: relative;
+      top: 20px;
+      bottom: 30px;
     }
   }
   .right-space{
-    height: 100vh;
+    height: 100%;
     width: 15%;
-    background-color: coral;
+    background-color: $base-color2;
   }
 }
 

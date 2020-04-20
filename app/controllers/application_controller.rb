@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def set_category
-    @category = Category.all
+    @categories = Category.all
   end
   
   protected
