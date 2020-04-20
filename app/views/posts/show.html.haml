@@ -1,0 +1,18 @@
+.show-post-page
+  .show-post
+    .show-post--one
+      .show__image
+        = image_tag @post.image.url(:content), class: 'show__image--show'
+      .show__title
+        = @post.title
+      .show__time
+        = @post.created_at.to_s(:datetime_jp)
+      .show__category
+        = "カテゴリ：#{@post.category.name}"
+      .show__money
+        = @post.money
+      .show__address
+        = @post.address
+      .show__text
+        = @post.text
+  = render partial: 'profile'

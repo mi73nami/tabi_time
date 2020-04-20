@@ -1,42 +1,102 @@
 .new-post-page{
-  display: flex;
+  @include main-page;
 }
 
 .new-post{
-  height: 1000px;
   width: 70%;
-  background-color: cornflowerblue;
   &__heading{
-    height: 50px;
-    width: 100%;
-    font-size: 25px;
-    background-color: crimson;
+    background-color: $accent-color;
+    color: $white;
     line-height: 50px;
-    text-align: center;
+    @include main__content--title;
   }
   .post-form{
-    height: 950px;
-    width: 100%;
-    background-color: darkblue;
+    height: auto;
+    width: 94%;
+    margin: 0 auto;
+    background-color: $white;
+    box-shadow: 2px 2px 4px $dark-gray;
   }
 }
 
-.new__image{
-  height: 400px;
+.new-image{
+  min-height: auto;
   width: 100%;
-  background-color: darkgreen;
+  background-color: $light-grey;
+  text-align: center;
+  vertical-align: bottom;
+  line-height: 0.5em;
+  label{
+    height: auto;
+    max-width: 100%;
+    display: block;
+    .image-icon{
+      cursor: pointer;
+      height: 400px;
+      width: 100%;
+      line-height: 400px;
+      display: inline-block;
+    }
+  }
+}
+
+.preview{
+  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 710px;
+  background-size: cover;
+}
+
+.new-image:hover {
+  background: $main-color;
+  color: $base-color1;
 }
 
 .new__title{
-  height: 50px;
-  width: 100%;
-  background-color: darkkhaki;
+  height: 100px;
+  @include new-post__space;
+  &--headline{
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  &--form{
+    height: 50px;
+    width:80%;
+    padding-left: 15px;
+  }
 }
 
 .select-new{
   height: 50px;
   width: 100%;
-  background-color: darkorange;
+  background-color: $white;
+  &__category{
+    height: 50px;
+    @include new-post__space;
+    &--headline{
+      color: $dark-gray;
+      margin-right: 40px;
+    }
+    &--box{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      padding: 7px 30px 7px 10px;
+      line-height: 1.1em;
+      border-radius: 5px;
+      background-repeat: no-repeat;
+      background-size: 12px 10px;
+      background-position: right 10px center;
+      background-color: $white;
+      border: 1px solid $light-grey;
+      color: $dark-gray;
+    }
+  }
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 .new__tags{
@@ -46,75 +106,60 @@
 }
 
 .new__money{
-  height: 30px;
-  width: 100%;
-  background-color: darkslategray;
+  height: 50px;
+  @include new-post__space;
+  &--headline{
+    @include headline;
+  }
+  &--form{
+    height: 30px;
+    width: 80%;
+    padding-left: 15px;
+  }
 }
 
-.new__adress{
-  height: 30px;
+.new__address{
+  height: 50px;
   width: 100%;
-  background-color: darkviolet;
+  @include new-post__space;
+  &--headline{
+    @include headline;
+  }
+  &--form{
+    height: 30px;
+    width: 80%;
+    padding-left: 15px;
+  }
 }
 
 .new__text{
-  height: 300px;
-  width: 100%;
-  background-color: deepskyblue;
+  height: 180px;
+  @include new-post__space;
+  &--headline{
+    @include headline;
+  }
+  &--form{
+    height: 150px;
+    width: 80%;
+    padding-left: 15px;
+  }
 }
 
 .new__submit{
-  height: 40px;
-  width: 100%;
-  background-color: lightcoral;
-}
-
-.profile{
-  height: 500px;
-  width: 30%;
-  background-color: lightsalmon;
-  &__user{
-    height: 100px;
-    width: 100%;
-    background-color: lightsteelblue;
-    display: flex;
-    &--image{
-      height: 100%;
-      width: 110px;
-      background-color: limegreen;
-    }
-    &--status{
-      height: 100%;
-      width: calc(100% - 110px);
-      background-color: magenta;
-      .user-info__username{
-        height: 50%;
-        width: 100%;
-        background-color: mediumslateblue;
-      }
-      .user-info__nickname{
-        height: 50%;
-        width: 100%;
-        background-color: goldenrod;
-      }
-    }
+  text-align: center;
+  &--btn{
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: $white;
+    background: $main-color;
+    transition: .4s;
   }
 }
 
-.user-connection{
-  height: 100px;
-  width: 100%;
-  background-color: greenyellow;
-  display: flex;
-  &__list{
-    height: 100%;
-    width: 33%;
-    background-color: indianred;
-  }
-}
-
-.profile__biography{
-  height: 150px;
-  width: 100%;
-  background-color: khaki;
+.new__submit--btn:hover {
+  background: $accent-color;
 }
