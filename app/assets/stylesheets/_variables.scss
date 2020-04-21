@@ -123,3 +123,15 @@ $dark-gray: #595857;
   color: $dark-gray;
   margin-right: 70px;
 }
+
+@mixin submit{
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: $white;
+  background: $main-color;
+  transition: .4s;
+}

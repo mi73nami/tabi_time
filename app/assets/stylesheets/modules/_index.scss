@@ -51,9 +51,22 @@
       width: 100%;
       display: flex;
       .userimage{
-        height: 100%;
-        width: 75px;
+        margin-left: 10px;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
         background-color: yellowgreen;
+        .show__image--user{
+          position: absolute;
+          top: -100%;
+          bottom: -100%;;
+          left: -100%;
+          right: -100%;
+          margin: auto;
+        }
       }
       .user-status{
         @include user-status;

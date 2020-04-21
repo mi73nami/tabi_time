@@ -34,9 +34,14 @@
       width: 100%;
       display: flex;
       .user__userimage{
-        height: 100%;
-        width: 80px;
-        background-color: slateblue;
+        margin-left: 10px;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: yellowgreen;
       }
       .user__user-status{
         @include user-status;
