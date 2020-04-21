@@ -1,0 +1,98 @@
+.user-edit-page{
+  height: 700px;
+  width: 100%;
+
+}
+
+.user-edit{
+  width: 70%;
+  &__heading{
+    background-color: $accent-color;
+    color: $white;
+    line-height: 50px;
+    @include main__content--title;
+  }
+}
+
+.user-edit-form{
+  height: 600px;
+  width: 94%;
+  margin: 0 auto;
+  background-color: $white;
+  box-shadow: 2px 2px 4px $dark-gray;
+}
+
+.user-edit__image{
+  height: 250px;
+  width: 250px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 50%;
+  margin-top: 20px;
+  .select-user-image{
+    display: block;
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    background-color: $light-grey;
+    background-position: center center;
+    position: relative;
+    object-fit: cover;
+    .user-image-icon{
+      cursor: pointer;
+      height: 250px;
+      width: 100%;
+      line-height: 250px;
+      display: inline-block;
+      color: $dark-gray;
+    }
+  }
+}
+
+.user_preview{
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.user-edit__nickname{
+  height: 100px;
+  @include new-post__space;
+  &--headline{
+    font-size: 20px;
+    margin-right: 20px;
+  }
+  &--form{
+    height: 50px;
+    width:80%;
+    padding-left: 15px;
+  }
+}
+
+.user-edit__biography{
+  height: 180px;
+  width: 100%;
+  &--headline{
+    padding-left: 15px;
+    font-size: 17px;
+  }
+  &--form{
+    height: 150px;
+    width: 77%;
+    padding: 10px 15px;
+    margin-left: 75px;
+  }
+}
+
+.user-edit__submit{
+  text-align: center;
+  margin-top: 15px;
+  &--btn{
+    @include submit;
+  }
+}
+
+.user-edit__submit--btn:hover {
+  background: $accent-color;
+}

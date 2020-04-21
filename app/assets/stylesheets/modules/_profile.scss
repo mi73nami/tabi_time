@@ -1,49 +1,77 @@
 .profile{
   height: 500px;
-  width: 30%;
-  background-color: lightsalmon;
+  width: 29%;
+  box-shadow: 2px 2px 4px $dark-gray;
+  background-color: $white;
   &__user{
     height: 100px;
     width: 100%;
-    background-color: lightsteelblue;
     display: flex;
     &--image{
-      height: 100%;
-      width: 110px;
-      background-color: limegreen;
+      margin-left: 10px;
+      margin-top: 10px;
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 50%;
+      background-color: yellowgreen;
     }
     &--status{
       height: 100%;
       width: calc(100% - 110px);
-      background-color: magenta;
-      .user-info__username{
-        height: 50%;
-        width: 100%;
-        background-color: mediumslateblue;
-      }
       .user-info__nickname{
-        height: 50%;
+        height: 100%;
         width: 100%;
-        background-color: goldenrod;
+        font-size: 25px;
+        padding-left: 15px;
+        padding-top: 20px;
       }
     }
+  }
+}
+
+.show__image--user{
+  position: absolute;
+  top: -100%;
+  bottom: -100%;;
+  left: -100%;
+  right: -100%;
+  margin: auto;
+}
+
+.user-info__nickname a{
+  color: black;
+  transition: 0.3s;
+  &:hover{
+    color: $accent-color;
   }
 }
 
 .user-connection{
   height: 100px;
   width: 100%;
-  background-color: greenyellow;
+  background-color: $white;
   display: flex;
   &__list{
     height: 100%;
     width: 33%;
-    background-color: indianred;
+    text-align: center;
+    padding-top: 20px;
+    margin-bottom: 10px;
+    color: $dark-gray;
+    a{
+      color: $main-color;
+      font-size: 20px;
+    }
   }
 }
 
 .profile__biography{
   height: 150px;
   width: 100%;
-  background-color: khaki;
+  padding: 15px;
+  font-size: 14px;
+  color: $dark-gray;
 }

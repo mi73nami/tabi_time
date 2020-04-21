@@ -141,22 +141,15 @@ select::-ms-expand {
   &--form{
     height: 150px;
     width: 80%;
-    padding-left: 15px;
+    padding: 10px 15px;
+
   }
 }
 
 .new__submit{
   text-align: center;
   &--btn{
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
-    font-weight: bold;
-    padding: 0.25em 0.5em;
-    text-decoration: none;
-    color: $white;
-    background: $main-color;
-    transition: .4s;
+    @include submit;
   }
 }
 

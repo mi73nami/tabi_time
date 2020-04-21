@@ -15,4 +15,22 @@
         = @post.address
       .show__text
         = @post.text
-  = render partial: 'profile'
+  .profile
+    .profile__user
+      .profile__user--image
+        = image_tag @post.user.image.url(:thumb200), class: "show__image--user"
+      .profile__user--status
+        %p.user-info__nickname
+          = link_to "#{@post.user.nickname}", "/users/#{@post.user.id}"
+    %ul.user-connection
+      %li.user-connection__list
+        %p.user-connection__list--follow フォロー
+        = link_to "2", "#"
+      %li.user-connection__list
+        %p.user-connection__list--followers フォロワー
+        = link_to "1", "#"
+      %li.user-connection__list
+        %p.user-connection__list--favorite お気に入り
+        = link_to "7", "#"
+    .profile__biography
+      = simple_format @post.user.biography

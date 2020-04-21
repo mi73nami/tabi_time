@@ -1,0 +1,17 @@
+.user-edit-page
+  .user-edit
+    %h2.user-edit__heading プロフィール編集
+    .user-edit-form
+      = form_with model: @user, local: true, id:"user_edit" do |form|
+        .user-edit__image
+          = form.label :image, class: 'select-user-image' do
+            = icon('fas', 'smile fa-10x', class: 'user-image-icon')
+          = form.file_field :image, style: "display: none;"
+        .user-edit__nickname
+          %p.user-edit__nickname--headline 名前
+          = form.text_field :nickname, class:"user-edit__nickname--form", placeholder:"12文字以内", maxlength:'12'
+        .user-edit__biography
+          %p.user-edit__biography--headline プロフィール
+          = form.text_area :biography, placeholder: "本文を入力してください", class: "user-edit__biography--form"
+        .user-edit__submit
+          = form.submit '更新する', class: "user-edit__submit--btn"

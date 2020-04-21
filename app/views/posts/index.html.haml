@@ -11,6 +11,7 @@
         .post__info
           .post__info--user
             .userimage
+              = image_tag post_spot.user.image.url(:thumb100), class: "show__image--user"
             .user-status
               .nickname
                 = post_spot.user.nickname
@@ -36,6 +37,7 @@
         .post__info
           .post__info--user
             .userimage
+              = image_tag post_restaurant.user.image.url(:thumb100), class: "show__image--user"
             .user-status
               .nickname
                 = post_restaurant.user.nickname
@@ -61,6 +63,7 @@
         .post__info
           .post__info--user
             .userimage
+              = image_tag post_hotel.user.image.url(:thumb100), class: "show__image--user"
             .user-status
               .nickname
                 = post_hotel.user.nickname
@@ -86,6 +89,7 @@
         .post__info
           .post__info--user
             .userimage
+              = image_tag post_shop.user.image.url(:thumb100), class: "show__image--user"
             .user-status
               .nickname
                 = post_shop.user.nickname
@@ -111,6 +115,7 @@
         .post__info
           .post__info--user
             .userimage
+              = image_tag post_souvenir.user.image.url(:thumb100), class: "show__image--user"
             .user-status
               .nickname
                 = post_souvenir.user.nickname
@@ -136,6 +141,7 @@
         .post__info
           .post__info--user
             .userimage
+              = image_tag post_other.user.image.url(:thumb100), class: "show__image--user"
             .user-status
               .nickname
                 = post_other.user.nickname
