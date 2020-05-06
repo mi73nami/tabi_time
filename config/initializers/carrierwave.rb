@@ -10,7 +10,7 @@ if Rails.env.production?
       provider: 'AWS',
       region: 'ap-northeast-1',
       aws_access_key_id: ENV['AWS_IAM_ACCESS_KEY_ID'],
-      aws_secret_access_key: ENV['AWS_IAM_ACCESS_KEY'],
+      aws_secret_access_key: ENV['AWS_SECRET_ACCESS_KEY'],
     }
     config.fog_directory     = 'tabi-time'
     config.fog_attributes = config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/tabi-time'
