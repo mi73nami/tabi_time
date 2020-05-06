@@ -1,8 +1,6 @@
 class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
-    @image = @user.image
-    @nickname = @user.nickname
     @posts = @user.posts.order(created_at: :desc)
   end
 
