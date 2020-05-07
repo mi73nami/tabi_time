@@ -1,0 +1,53 @@
+.new-post-page
+  .new-post
+    %h2.new-post__heading 投稿を編集
+    .post-form
+      = form_with model: @post, local: true, id:"new_post" do |form|
+        .new-image
+          = form.label :image, class: 'select-image' do
+            = icon('far', 'image fa-10x', class: 'image-icon')
+          = form.file_field :image, style: "display: none;"
+        .new__title
+          %p.new__title--headline タイトル
+          = form.text_field :title, class:"new__title--form", placeholder:"12文字以内", maxlength:'12'
+        .select-new
+          .select-new__category
+            %p.select-new__category--headline カテゴリ
+            = form.collection_select(:category_id, @categories, :id, :name, {prompt: "カテゴリを選択してください"}, {class: "select-new__category--box"})
+          -#%select.select-new__erea{name:"erea"}
+            -#%option{value:"エリアを選択してください"}エリアを選択してください
+          -#%select.select-new__country{name:"country"}
+            -#%option{value:"国を選択してください"}国を選択してください
+          -#%select.select-new__city{name:"city"}
+            -#%option{value:"都市を選択してください"}都市を選択してください
+        -#%input.new__tags{name:"tags", type:"text"}
+        .new__money
+          %p.new__money--headline 金額
+          = form.text_field :money, class:"new__money--form", placeholder:"入場料・価格などを入力してください"
+        .new__address
+          %p.new__address--headline 住所
+          = form.text_field :address, class:"new__address--form", placeholder:"お土産などは購入したお店を入力してください"
+        .new__text
+          %p.new__text--headline 本文
+          = form.text_area :text, placeholder: "本文を入力してください", class: "new__text--form"
+        .new__submit
+          = form.submit '投稿する', class: "new__submit--btn"
+  .profile
+    .profile__user
+      .profile__user--image
+        = image_tag @user_image.url(:thumb200), class: "show__image--user"
+      .profile__user--status
+        %p.user-info__nickname
+          = link_to "#{@nickname}", "/users/#{@user_id}"
+    %ul.user-connection
+      %li.user-connection__list
+        %p.user-connection__list--follow フォロー
+        = link_to "2", "#"
+      %li.user-connection__list
+        %p.user-connection__list--followers フォロワー
+        = link_to "1", "#"
+      %li.user-connection__list
+        %p.user-connection__list--favorite お気に入り
+        = link_to "7", "#"
+    .profile__biography
+      = simple_format @user_biography

@@ -28,6 +28,10 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @user_id = current_user.id
+    @nickname = current_user.nickname
+    @user_image = current_user.image
+    @user_biography = current_user.biography
   end
 
   def update
