@@ -3,8 +3,13 @@
     .show-post--one
       .show__image
         = image_tag @post.image.url(:content), class: 'show__image--show'
-      .show__title
-        = @post.title
+      .show__titleandedit
+        .show__title
+          = @post.title
+        - if user_signed_in? && current_user.id == @post.user_id
+          .show__edit
+            = link_to edit_post_path(@post.id) do
+              = icon('fas', 'edit fa-3x', class: 'edit-icon')
       .show__time
         = @post.created_at.to_s(:datetime_jp)
       .show__category

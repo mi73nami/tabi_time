@@ -24,11 +24,25 @@
   }
 }
 
+.show__titleandedit{
+  display: flex;
+  justify-content: space-between;
+  background-color: $white;
+}
+
 .show__title{
   height: 70px;
+  width: 60%;
   line-height: 70px;
   font-size: 25px;
-  @include show__space;
+  padding: 0 15px 0 15px;
+  background-color: $white;
+}
+
+.edit-icon{
+  padding: 10px 15px 0 0;
+  cursor: pointer;
+  color: $accent-color;
 }
 
 .show__time{
