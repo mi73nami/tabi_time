@@ -3,8 +3,17 @@
     .show-post--one
       .show__image
         = image_tag @post.image.url(:content), class: 'show__image--show'
-      .show__title
-        = @post.title
+      .show__titleandedit
+        .show__title
+          = @post.title
+        - if user_signed_in? && current_user.id == @post.user_id
+          .show__post-user
+            .show__edit
+              = link_to edit_post_path(@post.id) do
+                = icon('fas', 'edit fa-2x', class: 'edit-icon')
+            .show__destroy
+              = link_to post_path(@post.id), method: :delete, data: { confirm: '投稿を削除しますか？' } do
+                = icon('fas', 'trash-alt fa-2x', class: 'trash-icon')
       .show__time
         = @post.created_at.to_s(:datetime_jp)
       .show__category
