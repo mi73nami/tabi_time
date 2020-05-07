@@ -18,8 +18,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to root_path 
+    post = Post.new(post_params)
+    if post.save
+      redirect_to root_path 
+    else
+      redirect_to action:"new"
+    end
   end
 
   def show
