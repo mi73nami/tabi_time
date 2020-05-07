@@ -5,7 +5,7 @@
       = form_with model: @post, local: true, id:"new_post" do |form|
         .new-image
           = form.label :image, class: 'select-image' do
-            = icon('far', 'image fa-10x', class: 'image-icon')
+            = image_tag @post.image.url(:content) if @post.image?
           = form.file_field :image, style: "display: none;"
         .new__title
           %p.new__title--headline タイトル
@@ -31,7 +31,7 @@
           %p.new__text--headline 本文
           = form.text_area :text, placeholder: "本文を入力してください", class: "new__text--form"
         .new__submit
-          = form.submit '投稿する', class: "new__submit--btn"
+          = form.submit '変更する', class: "new__submit--btn"
   .profile
     .profile__user
       .profile__user--image
