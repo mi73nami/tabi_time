@@ -27,11 +27,11 @@
   vertical-align: bottom;
   line-height: 0.5em;
   label{
+    cursor: pointer;
     height: auto;
     max-width: 100%;
     display: block;
     .image-icon{
-      cursor: pointer;
       height: 400px;
       width: 100%;
       line-height: 400px;
