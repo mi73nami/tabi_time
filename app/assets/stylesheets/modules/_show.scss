@@ -39,10 +39,20 @@
   background-color: $white;
 }
 
-.edit-icon{
+.show__post-user{
   padding: 10px 15px 0 0;
+  display: flex;
+}
+
+.trash-icon{
   cursor: pointer;
   color: $accent-color;
+}
+
+.edit-icon{
+  margin-right: 15px;
+  cursor: pointer;
+  color: $main-color;
 }
 
 .show__time{
