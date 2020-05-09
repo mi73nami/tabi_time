@@ -134,4 +134,7 @@ $dark-gray: #595857;
   color: $white;
   background: $main-color;
   transition: .4s;
+  -webkit-appearance:none;
+  width: 90%;
+  border: none;
 }
