@@ -128,8 +128,8 @@
     height: 60px;
     width: 100%;
     border-radius: 5px;
-    color: $light-grey;
     padding: 5px;
+    border: 1px solid $light-grey;
   }
   .new_comment_btn{
     @include submit;
