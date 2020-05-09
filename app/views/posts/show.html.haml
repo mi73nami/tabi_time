@@ -28,13 +28,14 @@
         %P.show__comments--title 
           = icon('far', 'comment-dots', class: 'comment-icon')
           コメント
-        - if @comments
-          - @comments.each do |comment|
-            .show__comments--comment
-              %p.comment-user
-                = link_to "#{comment.user.nickname}", "/users/#{comment.user.id}"
-              %p.comment-text
-                = comment.text
+          .show__comment--area
+            - if @comments
+              - @comments.each do |comment|
+                .show__comments--comment
+                  %p.comment-user
+                    = link_to "#{comment.user.nickname}", "/users/#{comment.user.id}"
+                  %p.comment-text
+                    = comment.text
         .show__comments--form
           = form_with model: [@post,@comment], local: true, id:"new_comment" do |form|
             .form__comment

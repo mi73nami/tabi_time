@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    if comment.save
+    if @comment.save
       respond_to do |format|
         format.json
+      end
     else
       redirect_to post_path(post.id)
     end
