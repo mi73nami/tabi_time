@@ -14,6 +14,7 @@
     height: auto;
     width: 94%;
     margin: 0 auto;
+    padding-bottom: 20px;
     background-color: $white;
     box-shadow: 2px 2px 4px $dark-gray;
   }
@@ -64,6 +65,8 @@
     height: 50px;
     width:80%;
     padding-left: 15px;
+    border-radius: 5px;
+    border: 1px solid $light-grey;
   }
 }
 
@@ -91,6 +94,7 @@
       background-color: $white;
       border: 1px solid $light-grey;
       color: $dark-gray;
+      width: 80%;
     }
   }
 }
@@ -114,7 +118,9 @@ select::-ms-expand {
   &--form{
     height: 30px;
     width: 80%;
-    padding-left: 15px;
+    padding: 0 5px;
+    border-radius: 5px;
+    border: 1px solid $light-grey;
   }
 }
 
@@ -128,7 +134,9 @@ select::-ms-expand {
   &--form{
     height: 30px;
     width: 80%;
-    padding-left: 15px;
+    padding: 0 5px;
+    border-radius: 5px;
+    border: 1px solid $light-grey;
   }
 }
 
@@ -141,12 +149,14 @@ select::-ms-expand {
   &--form{
     height: 150px;
     width: 80%;
-    padding: 10px 15px;
-
+    padding: 5px;
+    border-radius: 5px;
+    color: $light-grey;
   }
 }
 
 .new__submit{
+  margin: 20px 0 ;
   text-align: center;
   &--btn{
     @include submit;
