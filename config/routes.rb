@@ -4,6 +4,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions' 
   }
   root to: "posts#index"
-  resources :posts
+  
+  resources :posts do
+    resources :comments, only: :create
+  end
+
   resources :users, only: [:show, :edit, :update]
 end
