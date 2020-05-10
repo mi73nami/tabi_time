@@ -1,5 +1,5 @@
 .profile{
-  height: 500px;
+  height: 400px;
   width: 29%;
   box-shadow: 2px 2px 4px $dark-gray;
   background-color: $white;
@@ -20,7 +20,7 @@
     }
     &--status{
       height: 100%;
-      width: calc(100% - 110px);
+      width: 55%;
       .user-info__nickname{
         height: 100%;
         width: 100%;
@@ -69,9 +69,26 @@
 }
 
 .profile__biography{
-  height: 150px;
+  height: 120px;
   width: 100%;
   padding: 15px;
   font-size: 14px;
   color: $dark-gray;
+}
+
+.profile__post{
+  display: block;
+  height: 40px;
+  width: 90%;
+  margin: 0 auto;
+  border: dashed 1px $base-color2;
+  border-radius: 20px;
+  background-color: $base-color1;
+  line-height: 40px;
+  text-align: center;
+}
+
+.user-edit-icon{
+  margin-top: 15px;
+  color: $main-color;
 }

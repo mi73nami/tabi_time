@@ -19,11 +19,13 @@
       .show__category
         = "カテゴリ：#{@post.category.name}"
       .show__money
+        = icon('fas', 'comment-dollar', class: 'dollar-icon')
         = @post.money
       .show__address
+        = icon('fas', 'map-marker-alt', class: 'map-icon')
         = @post.address
       .show__text
-        = @post.text
+        = simple_format @post.text
       .show__comments
         %P.show__comments--title 
           = icon('far', 'comment-dots', class: 'comment-icon')
@@ -48,6 +50,10 @@
       .profile__user--status
         %p.user-info__nickname
           = link_to "#{@post.user.nickname}", "/users/#{@post.user.id}"
+      -if user_signed_in? && current_user.id == @post.user_id
+        .profile__user--edit
+          = link_to edit_user_path(current_user.id) do
+            = icon('fas', 'user-edit', class: 'user-edit-icon')
     %ul.user-connection
       %li.user-connection__list
         %p.user-connection__list--follow フォロー
@@ -60,3 +66,4 @@
         = link_to "7", "#"
     .profile__biography
       = simple_format @post.user.biography
+    = link_to "投稿数 #{@post.user.posts.count}", user_path(@post.user.id), class: "profile__post"

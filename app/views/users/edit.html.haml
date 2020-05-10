@@ -5,7 +5,10 @@
       = form_with model: @user, local: true, id:"user_edit" do |form|
         .user-edit__image
           = form.label :image, class: 'select-user-image' do
-            = icon('fas', 'smile fa-10x', class: 'user-image-icon')
+            -if @user.image?
+              = image_tag @user.image.url(:content), class:"user_preview"
+            - else
+              = icon('fas', 'smile fa-10x', class: 'user-image-icon')
           = form.file_field :image, style: "display: none;"
         .user-edit__nickname
           %p.user-edit__nickname--headline 名前

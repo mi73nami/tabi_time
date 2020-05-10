@@ -64,6 +64,7 @@ $dark-gray: #595857;
   color: #2b2b2b;
   padding-left: 10px;
   font-size: 14px;
+  padding-top: 10px;
 }
 
 @mixin status{
@@ -137,4 +138,5 @@ $dark-gray: #595857;
   -webkit-appearance:none;
   width: 90%;
   border: none;
+  border-radius: 20px;
 }
