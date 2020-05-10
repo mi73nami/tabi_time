@@ -23,7 +23,7 @@
       .show__address
         = @post.address
       .show__text
-        = @post.text
+        = simple_format @post.text
       .show__comments
         %P.show__comments--title 
           = icon('far', 'comment-dots', class: 'comment-icon')
@@ -60,3 +60,4 @@
         = link_to "7", "#"
     .profile__biography
       = simple_format @post.user.biography
+    = link_to "投稿数 #{@post.user.posts.count}", user_path(@post.user.id), class: "profile__post"

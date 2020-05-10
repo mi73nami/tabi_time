@@ -43,3 +43,4 @@
         = link_to "7", "#"
     .profile__biography
       = simple_format @user.biography
+    = link_to "投稿数 #{current_user.posts.count}", user_path(current_user.id), class: "profile__post"
