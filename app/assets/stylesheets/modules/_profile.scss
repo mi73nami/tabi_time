@@ -20,7 +20,7 @@
     }
     &--status{
       height: 100%;
-      width: calc(100% - 110px);
+      width: 55%;
       .user-info__nickname{
         height: 100%;
         width: 100%;
@@ -86,4 +86,9 @@
   background-color: $base-color1;
   line-height: 40px;
   text-align: center;
+}
+
+.user-edit-icon{
+  margin-top: 15px;
+  color: $main-color;
 }
