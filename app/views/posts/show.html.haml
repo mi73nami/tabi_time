@@ -19,8 +19,10 @@
       .show__category
         = "カテゴリ：#{@post.category.name}"
       .show__money
+        = icon('fas', 'comment-dollar', class: 'dollar-icon')
         = @post.money
       .show__address
+        = icon('fas', 'map-marker-alt', class: 'map-icon')
         = @post.address
       .show__text
         = simple_format @post.text
