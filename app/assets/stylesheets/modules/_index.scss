@@ -18,30 +18,3 @@
   width: 100%;
 }
 
-.categories{
-  height: auto;
-  width: 30%;
-  &__title{
-    height: 60px;
-    width: 94%;
-    margin: 0 auto;
-    text-align: center;
-    line-height: 60px;
-    font-size: 20px;
-    color: $main-color;
-    border-top: 3px dashed $main-color;
-    border-bottom: 3px dashed $main-color;
-    background-color: $base-color1;
-  }
-  &__box{
-    height: 50px;
-    width: 94%;
-    margin: 0 auto;
-    background-color: $white;
-    margin-top: 10px;
-    text-align: center;
-    line-height: 50px;
-    border-radius: 30px;
-    border: 1px dashed $main-color;
-  }
-}

@@ -2,5 +2,4 @@
   .categories__title
     カテゴリー
   - @categories.each do |category|
-    .categories__box
-      = link_to "#{category.name}", category_path(category.id)
+    = link_to "#{category.name}", category_path(category.id), class:"categories__box"
