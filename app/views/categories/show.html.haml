@@ -1,0 +1,6 @@
+.category-page
+  .category-posts
+    %h2.category-name
+      = @category.name
+    = render "posts/postthumbnail"
+  = render "categories/categorybox"
