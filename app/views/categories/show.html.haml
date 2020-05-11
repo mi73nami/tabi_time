@@ -1,0 +1,24 @@
+= @category.name
+.new-posts-index
+  - @posts.each do |post|
+    .user__post
+      = link_to "", post_path(post.id)
+      .user__post__image
+        = image_tag post.image.url(:thumb), class: 'show__image--top'
+      .user__post__info
+        .user__post__info--user
+          .user__userimage
+            = image_tag post.user.image.url(:thumb100), class: "show__image--user"
+          .user__user-status
+            .user__nickname
+              = post.user.nickname
+        .user__post__info--title
+          = post.title
+        .user__post__info--status
+          .user__post-category 
+            = "カテゴリ：#{post.category.name}"
+          -#.user__post-erea 北米>アメリカ>シカゴ
+        .user__post__info--tags
+        .user__post__info--time
+          %p.create-time
+            = post.created_at.to_s(:datetime_jp)
