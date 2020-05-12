@@ -4,3 +4,30 @@
   line-height: 50px;
   @include main__content--title;
 }
+
+.user__post__info--like{
+  height: 25%;
+  width: 100%;
+  background-color: $white;
+}
+
+.user__post-like{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  padding-top: 15px;
+}
+
+.like-icon--fav{
+  color: #ffd700;
+}
+
+.like-icon--nofav{
+  color: $dark-gray;
+}
+
+.show__post-like-count--thumbail{
+  color: $dark-gray;
+  font-size: 13px;
+  padding-left: 5px;
+}

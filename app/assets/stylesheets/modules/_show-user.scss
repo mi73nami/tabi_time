@@ -64,11 +64,6 @@
         background-color: $white;
       }
     }
-    &--tags{
-      height: 25%;
-      width: 100%;
-      background-color: $white;
-    }
     &--time{
       @include time;
     }

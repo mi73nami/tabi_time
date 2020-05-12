@@ -21,7 +21,15 @@
                 .user__post-category 
                   = "カテゴリ：#{like.post.category.name}"
                 -#.user__post-erea 北米>アメリカ>シカゴ
-              .user__post__info--tags
+              .user__post__info--like
+                .user__post-like
+                  - if user_signed_in?
+                    - if like.post.liked_by?(current_user)
+                      = icon('fas', 'star', class: 'like-icon--fav')
+                    - else
+                      = icon('fas', 'star', class: 'like-icon--nofav')
+                    .show__post-like-count--thumbail
+                      = like.post.likes.count
               .user__post__info--time
                 %p.create-time
                   = like.post.created_at.to_s(:datetime_jp)
