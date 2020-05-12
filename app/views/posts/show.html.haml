@@ -7,14 +7,7 @@
         .show__title
           = @post.title
         .show__post-like
-          - if current_user.already_liked?(@post)
-            = link_to post_like_path(@post), method: :delete, style:"color:#ffd700" do
-              = icon('fas', 'star fa-2x', class: 'like-icon')
-          - else
-            = link_to post_likes_path(@post), method: :post do
-              = icon('fas', 'star fa-2x', class: 'like-icon')
-          .show__post-like-count
-            = @post.likes.count
+          = render partial: "likes/like", locals: { post: @post }
         - if user_signed_in? && current_user.id == @post.user_id
           .show__post-user
             .show__edit
