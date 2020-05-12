@@ -23,7 +23,7 @@
         = link_to "1", "#"
       %li.user-connection__list
         %p.user-connection__list--favorite お気に入り
-        = link_to "7", "#"
+        = link_to "#{@user.likes.count}", user_likes_path(@user.id)
     .profile__biography
       = simple_format @user.biography
     = link_to "投稿数 #{@user.posts.count}", user_path(@user.id), class: "profile__post"

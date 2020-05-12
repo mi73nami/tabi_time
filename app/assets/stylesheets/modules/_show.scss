@@ -48,6 +48,20 @@
   display: flex;
 }
 
+.show__post-like{
+  margin-top: 10px;
+  display:flex;
+  .like-icon{
+    padding-right: 12px;
+  }
+  .show__post-like-count{
+    margin-top: 7px;
+    color: $dark-gray;
+    padding-right: 15px;
+  }
+}
+
+
 .trash-icon{
   cursor: pointer;
   color: $accent-color;
