@@ -1,6 +1,12 @@
+.right-contents{
+  height: auto;
+  width: 30%;
+}
+
 .profile{
-  height: 400px;
-  width: 29%;
+  height: auto;
+  width: 98%;
+  padding-bottom: 20px;
   box-shadow: 2px 2px 4px $dark-gray;
   background-color: $white;
   &__user{
@@ -86,6 +92,7 @@
   background-color: $base-color1;
   line-height: 40px;
   text-align: center;
+  margin-top: 15px;
 }
 
 .user-edit-icon{

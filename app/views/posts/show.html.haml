@@ -40,32 +40,38 @@
                     = link_to "#{comment.user.nickname}", "/users/#{comment.user.id}"
                   %p.comment-text
                     = comment.text
-        .show__comments--form
-          = form_with model: [@post,@comment], local: true, id:"new_comment" do |form|
-            .form__comment
-              = form.text_area :text, placeholder: "コメント",class:'new_comment_text'
-              = form.submit 'コメントする', class: 'new_comment_btn'
-  .profile
-    .profile__user
-      .profile__user--image
-        = image_tag @post.user.image.url(:thumb200), class: "show__image--user"
-      .profile__user--status
-        %p.user-info__nickname
-          = link_to "#{@post.user.nickname}", "/users/#{@post.user.id}"
-      -if user_signed_in? && current_user.id == @post.user_id
-        .profile__user--edit
-          = link_to edit_user_path(current_user.id) do
-            = icon('fas', 'user-edit', class: 'user-edit-icon')
-    %ul.user-connection
-      %li.user-connection__list
-        %p.user-connection__list--follow フォロー
-        = link_to "2", "#"
-      %li.user-connection__list
-        %p.user-connection__list--followers フォロワー
-        = link_to "1", "#"
-      %li.user-connection__list
-        %p.user-connection__list--favorite お気に入り
-        = link_to "#{@post.user.likes.count}",user_likes_path(@post.user.id)
-    .profile__biography
-      = simple_format @post.user.biography
-    = link_to "投稿数 #{@post.user.posts.count}", user_path(@post.user.id), class: "profile__post"
+        - if user_signed_in?
+          .show__comments--form
+            = form_with model: [@post,@comment], local: true, id:"new_comment" do |form|
+              .form__comment
+                = form.text_area :text, placeholder: "コメント",class:'new_comment_text'
+                = form.submit 'コメントする', class: 'new_comment_btn'
+        - else
+          %p.comment-not
+            ※※※ コメントの投稿には新規登録/ログインが必要です ※※※
+  .right-contents
+    .profile
+      .profile__user
+        .profile__user--image
+          = image_tag @post.user.image.url(:thumb200), class: "show__image--user"
+        .profile__user--status
+          %p.user-info__nickname
+            = link_to "#{@post.user.nickname}", "/users/#{@post.user.id}"
+        -if user_signed_in? && current_user.id == @post.user_id
+          .profile__user--edit
+            = link_to edit_user_path(current_user.id) do
+              = icon('fas', 'user-edit', class: 'user-edit-icon')
+      %ul.user-connection
+        %li.user-connection__list
+          %p.user-connection__list--follow フォロー
+          = link_to "#{@post.user.followings.count}", user_relationships_path(@post.user.id)
+        %li.user-connection__list
+          %p.user-connection__list--followers フォロワー
+          = link_to "#{@post.user.followers.count}", user_relationships_path(@post.user.id)
+        %li.user-connection__list
+          %p.user-connection__list--favorite お気に入り
+          = link_to "#{@post.user.likes.count}",user_likes_path(@post.user.id)
+      .profile__biography
+        = simple_format @post.user.biography
+      = render partial: "relationships/follow", locals: { user: @user }
+      = link_to "投稿数 #{@post.user.posts.count}", user_path(@post.user.id), class: "profile__post"

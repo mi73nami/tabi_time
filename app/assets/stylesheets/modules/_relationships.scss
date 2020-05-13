@@ -1,0 +1,62 @@
+.relationships-page{
+  @include main-page;
+}
+
+.relationships{
+  width: 70%;
+  display: flex;
+  &__followings{
+    width: 50%;
+    &--heading{
+      @include main__content--title;
+      color: $white;
+      background: $main-color;
+    }
+  }
+  &__followers{
+    width: 50%;
+    &--heading{
+      @include main__content--title;
+      color: $main-color;
+      background: $white;
+      border: solid 1px $main-color;
+    }
+  }
+}
+
+.follow-list{
+  width: 94%;
+  margin: 0 auto;
+}
+
+.follow-user{
+  height: 70px;
+  width: 100%;
+  background-color: $white;
+  margin-bottom: 15px;
+  border: solid 1px $light-grey;
+  display: flex;
+  &__image{
+    margin-left: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: yellowgreen;
+    margin-top: 4px;
+  }
+  &__name{
+    width: 35%;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    padding-right: 15px;
+  }
+  &__btn{
+    height: 70px;
+    width: 40%;
+  }
+}

@@ -157,3 +157,12 @@
 .new_comment_btn:hover{
   background: $accent-color;
 }
+
+.comment-not{
+  height: 50px;
+  width: 100%;
+  line-height: 50px;
+  text-align: center;
+  color: $accent-color;
+  font-size: 13px;
+}
