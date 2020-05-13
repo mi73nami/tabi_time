@@ -30,7 +30,10 @@ class User < ApplicationRecord
     relationship = self.relationships.find_by(follow_id: other_user.id)
     relationship.destroy if relationship
   end
-
+  # フォローしているUser達を取得し、include?(other_user)によってother_userが含まれていないかを確認
+  def following?(other_user)
+    self.followings.include?(other_user)
+  end
 
   mount_uploader :image, ImageUploader
 end
