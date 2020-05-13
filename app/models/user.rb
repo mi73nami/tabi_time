@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :liked_posts, through: :likes, source: :post
 
   has_many :relationships
+  has_many :followings, through: :relationships, source: :follow
 
   mount_uploader :image, ImageUploader
 end
