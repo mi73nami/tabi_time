@@ -1,6 +1,12 @@
+.right-contents{
+  height: auto;
+  width: 30%;
+}
+
 .profile{
-  min-height: auto;
-  width: 29%;
+  height: auto;
+  width: 98%;
+  padding-bottom: 20px;
   box-shadow: 2px 2px 4px $dark-gray;
   background-color: $white;
   &__user{

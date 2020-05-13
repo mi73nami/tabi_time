@@ -3,27 +3,29 @@
     %p.list-title 
       = "#{@user.nickname}さんの投稿一覧"
       = render "posts/postthumbnail"
-  .profile
-    .profile__user
-      .profile__user--image
-        = image_tag @user.image.url(:thumb200), class: "show__image--user"
-      .profile__user--status
-        %p.user-info__nickname
-          = link_to "#{@user.nickname}", "/users/#{@user.id}"
-      -if user_signed_in? && current_user.id == @user.id
-        .profile__user--edit
-          = link_to edit_user_path(current_user.id) do
-            = icon('fas', 'user-edit', class: 'user-edit-icon')
-    %ul.user-connection
-      %li.user-connection__list
-        %p.user-connection__list--follow フォロー
-        = link_to "2", "#"
-      %li.user-connection__list
-        %p.user-connection__list--followers フォロワー
-        = link_to "1", "#"
-      %li.user-connection__list
-        %p.user-connection__list--favorite お気に入り
-        = link_to "#{@user.likes.count}", user_likes_path(@user.id)
-    .profile__biography
-      = simple_format @user.biography
-    = link_to "投稿数 #{@user.posts.count}", user_path(@user.id), class: "profile__post"
+  .right-contents
+    .profile
+      .profile__user
+        .profile__user--image
+          = image_tag @user.image.url(:thumb200), class: "show__image--user"
+        .profile__user--status
+          %p.user-info__nickname
+            = link_to "#{@user.nickname}", "/users/#{@user.id}"
+        -if user_signed_in? && current_user.id == @user.id
+          .profile__user--edit
+            = link_to edit_user_path(current_user.id) do
+              = icon('fas', 'user-edit', class: 'user-edit-icon')
+      %ul.user-connection
+        %li.user-connection__list
+          %p.user-connection__list--follow フォロー
+          = link_to "2", "#"
+        %li.user-connection__list
+          %p.user-connection__list--followers フォロワー
+          = link_to "1", "#"
+        %li.user-connection__list
+          %p.user-connection__list--favorite お気に入り
+          = link_to "#{@user.likes.count}", user_likes_path(@user.id)
+      .profile__biography
+        = simple_format @user.biography
+      = render partial: "relationships/follow", locals: { user: @user }
+      = link_to "投稿数 #{@user.posts.count}", user_path(@user.id), class: "profile__post"
