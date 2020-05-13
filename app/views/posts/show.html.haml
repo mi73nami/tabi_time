@@ -68,4 +68,5 @@
         = link_to "#{@post.user.likes.count}",user_likes_path(@post.user.id)
     .profile__biography
       = simple_format @post.user.biography
+    = render partial: "relationships/follow", locals: { user: @user }
     = link_to "投稿数 #{@post.user.posts.count}", user_path(@post.user.id), class: "profile__post"

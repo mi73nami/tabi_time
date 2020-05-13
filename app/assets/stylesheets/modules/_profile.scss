@@ -1,5 +1,5 @@
 .profile{
-  height: 400px;
+  min-height: auto;
   width: 29%;
   box-shadow: 2px 2px 4px $dark-gray;
   background-color: $white;
@@ -86,6 +86,7 @@
   background-color: $base-color1;
   line-height: 40px;
   text-align: center;
+  margin-top: 15px;
 }
 
 .user-edit-icon{

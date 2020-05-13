@@ -1,0 +1,27 @@
+.follow-now{
+  display: block;
+  height: 40px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: $main-color;
+  color: $white;
+  line-height: 40px;
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+
+.follows{
+  display: block;
+  height: 40px;
+  width: 90%;
+  margin: 0 auto;
+  border-radius: 20px;
+  background-color: $white;
+  color: $main-color;
+  border: solid 1px $main-color;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
