@@ -47,10 +47,10 @@
       %ul.user-connection
         %li.user-connection__list
           %p.user-connection__list--follow フォロー
-          = link_to "2", "#"
+          = link_to "#{current_user.followings.count}", "#"
         %li.user-connection__list
           %p.user-connection__list--followers フォロワー
-          = link_to "1", "#"
+          = link_to "#{current_user.followers.count}", "#"
         %li.user-connection__list
           %p.user-connection__list--favorite お気に入り
           = link_to "#{current_user.likes.count}",user_likes_path(current_user.id)

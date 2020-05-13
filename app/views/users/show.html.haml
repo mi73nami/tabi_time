@@ -18,10 +18,10 @@
       %ul.user-connection
         %li.user-connection__list
           %p.user-connection__list--follow フォロー
-          = link_to "2", "#"
+          = link_to "#{@user.followings.count}", "#"
         %li.user-connection__list
           %p.user-connection__list--followers フォロワー
-          = link_to "1", "#"
+          = link_to "#{@user.followers.count}", "#"
         %li.user-connection__list
           %p.user-connection__list--favorite お気に入り
           = link_to "#{@user.likes.count}", user_likes_path(@user.id)
