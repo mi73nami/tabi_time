@@ -24,6 +24,13 @@ class User < ApplicationRecord
       self.relationships.find_or_create_by(follow_id: other_user.id)
     end
   end
+  # フォローしているユーザーのフォローを外す時
+  # if relationshipでリレーションが存在している場合にrelationship.destroyを実行
+  def unfollow(other_user)
+    relationship = self.relationships.find_by(follow_id: other_user.id)
+    relationship.destroy if relationship
+  end
+
 
   mount_uploader :image, ImageUploader
 end
