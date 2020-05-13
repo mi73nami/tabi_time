@@ -9,6 +9,15 @@ class RelationshipsController < ApplicationController
       redirect_to @user
     end
   end
+
+  def destroy
+    following = current_user.unfollow(@user)
+    if following.destroy
+      redirect_to @user
+    else
+      redirect_to @user
+    end
+  end
   
   private
   def
