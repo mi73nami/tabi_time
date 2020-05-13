@@ -64,10 +64,10 @@
       %ul.user-connection
         %li.user-connection__list
           %p.user-connection__list--follow フォロー
-          = link_to "#{@post.user.followings.count}", "#"
+          = link_to "#{@post.user.followings.count}", user_relationships_path(@post.user.id)
         %li.user-connection__list
           %p.user-connection__list--followers フォロワー
-          = link_to "#{@post.user.followers.count}", "#"
+          = link_to "#{@post.user.followers.count}", user_relationships_path(@post.user.id)
         %li.user-connection__list
           %p.user-connection__list--favorite お気に入り
           = link_to "#{@post.user.likes.count}",user_likes_path(@post.user.id)

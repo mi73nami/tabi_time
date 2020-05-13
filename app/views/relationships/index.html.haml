@@ -26,10 +26,10 @@
     .profile
       .profile__user
         .profile__user--image
-          = image_tag current_user.image.url(:thumb200), class: "show__image--user"
+          = image_tag @user.image.url(:thumb200), class: "show__image--user"
         .profile__user--status
           %p.user-info__nickname
-            = link_to "#{current_user.nickname}", "/users/#{current_user.id}"
+            = link_to "#{@user.nickname}", "/users/#{@user.id}"
         -if user_signed_in? && current_user.id
           .profile__user--edit
             = link_to edit_user_path(current_user.id) do
@@ -37,13 +37,13 @@
       %ul.user-connection
         %li.user-connection__list
           %p.user-connection__list--follow フォロー
-          = link_to "#{current_user.followings.count}", "#"
+          = link_to "#{@user.followings.count}", user_relationships_path(@user.id)
         %li.user-connection__list
           %p.user-connection__list--followers フォロワー
-          = link_to "#{current_user.followers.count}", "#"
+          = link_to "#{@user.followers.count}", user_relationships_path(@user.id)
         %li.user-connection__list
           %p.user-connection__list--favorite お気に入り
-          = link_to "#{current_user.likes.count}",user_likes_path(current_user.id)
+          = link_to "#{@user.likes.count}",user_likes_path(@user.id)
       .profile__biography
         = simple_format current_user.biography
-      = link_to "投稿数 #{current_user.posts.count}", user_path(current_user.id), class: "profile__post"
+      = link_to "投稿数 #{current_user.posts.count}", user_path(@user.id), class: "profile__post"
