@@ -9,9 +9,9 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:relationship][:follow_id])
     following = current_user.follow(user)
     if following.save
-      redirect_to user
+      redirect_back(fallback_location: root_path)
     else
-      redirect_to user
+      redirect_back(fallback_location: root_path)
     end
   end
 
@@ -19,9 +19,9 @@ class RelationshipsController < ApplicationController
     user = User.find(params[:relationship][:follow_id])
     following = current_user.unfollow(user)
     if following.destroy
-      redirect_to user
+      redirect_back(fallback_location: root_path)
     else
-      redirect_to user
+      redirect_back(fallback_location: root_path)
     end
   end
   
