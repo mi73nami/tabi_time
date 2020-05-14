@@ -21,11 +21,11 @@
       .show__category
         = link_to "カテゴリ：#{@post.category.name}", category_path(@post.category.id), class:"show__category--text"
       .show__place
-        = link_to "エリア：#{@places.find(@post.place_id).parent.parent.name}", "#", class:"show__category--text"
+        = link_to "エリア：#{@places.find(@post.place_id).parent.parent.name}", place_path(@places.find(@post.place_id).parent.parent.id), class:"show__category--text"
       .show__place
-        = link_to "国：#{@places.find(@post.place_id).parent.name}", "#", class:"show__category--text"
+        = link_to "国：#{@places.find(@post.place_id).parent.name}", place_path(@places.find(@post.place_id).parent.id), class:"show__category--text"
       .show__place
-        = link_to "都市：#{@places.find(@post.place_id).name}", "#", class:"show__category--text"
+        = link_to "都市：#{@places.find(@post.place_id).name}", place_path(@places.find(@post.place_id)), class:"show__category--text"
       .show__money
         = icon('fas', 'comment-dollar', class: 'dollar-icon')
         = @post.money
