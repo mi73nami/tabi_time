@@ -40,6 +40,25 @@ class PostsController < ApplicationController
     @nickname = current_user.nickname
     @user_image = current_user.image
     @user_biography = current_user.biography
+
+    city_place = @post.place
+    country_place = city_place.parent
+
+    @area_array = []
+    Place.where(ancestry: nil).each do |area|
+      @area_array << area.name
+    end
+
+    @country_array = []
+    Place.where(ancestry: country_place.ancestry).each do |country|
+      @country_array << country
+    end
+
+    @city_array = []
+    Place.where(ancestry: city_place.ancestry).each do |city|
+      @city_array << city
+    end
+
   end
 
   def update

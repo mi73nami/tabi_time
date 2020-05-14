@@ -18,7 +18,7 @@ $(function(){
     var citySelectHtml = '';
     citySelectHtml = `<div class="select-new__place--city">
                         <p class="select-new__place--city--headline">都市</p>
-                        <select class="city-box" id="city" name="place[place_id]">
+                        <select class="city-box" id="city" name="post[place_id]">
                           <option value="" data-category="都市を選択してください">都市を選択してください</option>
                             ${insertHTML}
                         </select>
