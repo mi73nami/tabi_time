@@ -9,12 +9,12 @@ Rails.application.routes.draw do
     resources :comments, only: :create
     resources :likes, only: [:create, :destroy]
     collection do
-      get 'get_country', defaults: { format: 'json' }
-      get 'get_city', defaults: { format: 'json' }
+      get 'get_countries', defaults: { format: 'json' }
+      get 'get_cities', defaults: { format: 'json' }
     end
     member do
-      get 'get_country', defaults: { format: 'json' }
-      get 'get_city', defaults: { format: 'json' }
+      get 'get_countries', defaults: { format: 'json' }
+      get 'get_cities', defaults: { format: 'json' }
     end
   end
 

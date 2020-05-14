@@ -63,6 +63,14 @@ class PostsController < ApplicationController
     end
   end
 
+  def get_countries
+    @countries = Place.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_cities
+    @cities = Place.find("#{params[:child_id]}").children
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :text, :image, :money, :address, :category_id).merge(user_id: current_user.id)
