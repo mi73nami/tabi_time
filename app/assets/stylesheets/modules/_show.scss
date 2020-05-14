@@ -89,10 +89,22 @@
   @include show__space;
 }
 
+.show__place{
+  height: 25px;
+  line-height: 25px;
+  color: $dark-gray;
+  @include show__space;
+}
+
+.show__category--text:hover {
+  color: $accent-color;
+}
+
 .show__money{
   height: 30px;
   line-height: 30px;
   color: $dark-gray;
+  margin-top: 15px;
   @include show__space;
 }
 
