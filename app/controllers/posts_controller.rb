@@ -10,6 +10,10 @@ class PostsController < ApplicationController
     @nickname = current_user.nickname
     @user_image = current_user.image
     @user_biography = current_user.biography
+
+    @area_array = ["選択してください"]
+    Place.where(ancestry: nil).each do |area|
+      @area_array << area.name
   end
 
   def create
