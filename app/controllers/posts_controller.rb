@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_category
+  before_action :set_category, :set_place
   def index
     @posts = Post.includes(:user).order("created_at DESC").limit(10)
   end
@@ -32,7 +32,6 @@ class PostsController < ApplicationController
     @comments = @post.comments.includes(:user)
     @like = Like.new
     @user = @post.user
-    @places = Place.all
   end
 
   def edit
