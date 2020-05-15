@@ -15,7 +15,7 @@ html,body{
 .header{
   height: 60px;
   width: 100%;
-  background-color: $white;
+  background-color: #f7f6f5;
   position: fixed;
   z-index:999999;
   &__contents{
@@ -42,12 +42,38 @@ html,body{
   display: flex;
   margin-right: 15%;
   &__current{
-    line-height: 60px;
-    padding-right: 30px;
+    display:block;
+    margin-top: 10px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    border: solid 1px $main-color;
   }
   &__status{
-    line-height: 60px;
+    display:block;
+    margin-top: 10px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    margin-left: 20px;
+    border-radius: 20px;
+    border: solid 1px $accent-color;
   }
+}
+
+.user-info__mypage{
+  display:block;
+  margin-top: 10px;
+  text-align: center;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  border-radius: 20px;
+  background-color: $base-color2;
 }
 
 .content{

@@ -6,7 +6,7 @@ class PlaceController < ApplicationController
   end
 
   def show
-    @posts = Post.joins(:place).where(place_id: params[:id])
+    @posts = Post.joins(:place).where(place_id: params[:id]).order("created_at DESC")
     @places = Place.find(params[:id])
   end
 end

@@ -1,5 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_category, :set_place
+  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index_edit_destroy, only: [:edit, :destroy]
+  
+
   def index
     @posts = Post.includes(:user).order("created_at DESC").limit(10)
   end
@@ -22,6 +26,7 @@ class PostsController < ApplicationController
     if post.save
       redirect_to root_path 
     else
+      flash[:alert] = '投稿に失敗しました'
       redirect_to action:"new"
     end
   end
@@ -67,9 +72,11 @@ class PostsController < ApplicationController
       if post.update(post_params)
         redirect_to post_path(post.id)
       else
+        flash[:alert] = '投稿に失敗しました'
         redirect_to action: "edit"
       end
     else
+      flash[:alert] = '投稿に失敗しました'
       redirect_to action: "edit"
     end
   end
@@ -98,5 +105,14 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :text, :image, :money, :address, :category_id, :place_id).merge(user_id: current_user.id)
+  end
+
+  def move_to_index
+    redirect_to action: :index unless user_signed_in?
+  end
+
+  def move_to_index_edit_destroy
+    @post = Post.find(params[:id])
+    redirect_to post_path(@post.id) unless current_user.id == @post.user_id
   end
 end
