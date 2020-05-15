@@ -1,6 +1,7 @@
 .user-edit-page
   .user-edit
     %h2.user-edit__heading プロフィール編集
+    = render 'layouts/notifications'
     .user-edit-form
       = form_with model: @user, local: true, id:"user_edit" do |form|
         .user-edit__image

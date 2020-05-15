@@ -1,6 +1,7 @@
 .new-post-page
   .new-post
     %h2.new-post__heading 投稿を編集
+    = render 'layouts/notifications'
     .post-form
       = form_with model: @post, local: true, id:"new_post" do |form|
         .new-image

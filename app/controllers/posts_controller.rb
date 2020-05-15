@@ -26,6 +26,7 @@ class PostsController < ApplicationController
     if post.save
       redirect_to root_path 
     else
+      flash[:alert] = '投稿に失敗しました'
       redirect_to action:"new"
     end
   end
@@ -71,9 +72,11 @@ class PostsController < ApplicationController
       if post.update(post_params)
         redirect_to post_path(post.id)
       else
+        flash[:alert] = '投稿に失敗しました'
         redirect_to action: "edit"
       end
     else
+      flash[:alert] = '投稿に失敗しました'
       redirect_to action: "edit"
     end
   end

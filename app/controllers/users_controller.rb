@@ -13,7 +13,8 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_to user_path(current_user.id)
     else
-      render :edit
+      flash[:alert] = '投稿に失敗しました'
+      redirect_to action: "edit"
     end
   end
     
