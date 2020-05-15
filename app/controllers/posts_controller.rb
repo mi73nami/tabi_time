@@ -1,7 +1,9 @@
 class PostsController < ApplicationController
   before_action :set_category, :set_place
   before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index_edit_destroy, only: [:edit, :destroy]
   
+
   def index
     @posts = Post.includes(:user).order("created_at DESC").limit(10)
   end
@@ -104,5 +106,10 @@ class PostsController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+
+  def move_to_index_edit_destroy
+    @post = Post.find(params[:id])
+    redirect_to post_path(@post.id) unless current_user.id == @post.user_id
   end
 end
