@@ -7,6 +7,8 @@
           = form.label :image, class: 'select-image' do
             = icon('far', 'image fa-10x', class: 'image-icon')
           = form.file_field :image, style: "display: none;"
+        .new__required
+          %p.new__required--text ※赤字項目、画像は入力必須項目です
         .new__title
           %p.new__title--headline タイトル
           = form.text_field :title, class:"new__title--form", placeholder:"12文字以内", maxlength:'12'

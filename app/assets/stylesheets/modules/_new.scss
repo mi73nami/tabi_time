@@ -54,12 +54,23 @@
   color: $base-color1;
 }
 
+.new__required{
+  height: 30px;
+  margin-left: 15px;
+  font-size: 13px;
+  color: $accent-color;
+  &--text{
+    padding-top: 15px;
+  }
+}
+
 .new__title{
   height: 100px;
   @include new-post__space;
   &--headline{
     font-size: 20px;
     margin-right: 20px;
+    color: $accent-color;
   }
   &--form{
     height: 50px;
@@ -78,7 +89,7 @@
     height: 50px;
     @include new-post__space;
     &--headline{
-      color: $dark-gray;
+      color: $accent-color;
       margin-right: 40px;
     }
   }
@@ -91,7 +102,7 @@
     margin: 10px 0;
     @include new-post__space;
     &--headline{
-      color: $dark-gray;
+      color: $accent-color;
       width: 103px;
     }
   }
@@ -99,7 +110,7 @@
     margin: 10px 0;
     @include new-post__space;
     &--headline{
-      color: $dark-gray;
+      color: $accent-color;
       width: 103px;
     }
   }
@@ -107,7 +118,7 @@
     margin: 10px 0;
     @include new-post__space;
     &--headline{
-      color: $dark-gray;
+      color: $accent-color;
       width: 103px;
     }
   }
@@ -152,7 +163,8 @@ select::-ms-expand {
   height: 180px;
   @include new-post__space;
   &--headline{
-    @include headline;
+    color: $accent-color;
+    margin-right: 70px;
   }
   &--form{
     height: 150px;
