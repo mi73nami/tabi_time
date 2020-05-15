@@ -8,6 +8,14 @@ Rails.application.routes.draw do
   resources :posts do
     resources :comments, only: :create
     resources :likes, only: [:create, :destroy]
+    collection do
+      get 'get_countries', defaults: { format: 'json' }
+      get 'get_cities', defaults: { format: 'json' }
+    end
+    member do
+      get 'get_countries', defaults: { format: 'json' }
+      get 'get_cities', defaults: { format: 'json' }
+    end
   end
 
   resources :users, only: [:show, :edit, :update] do
@@ -17,4 +25,5 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
   resources :categories, only: :show
+  resources :place, only: [:index, :show]
 end

@@ -1,0 +1,63 @@
+.user__post{
+  width: 94%;
+  margin: 0 auto;
+  background-color: $white;
+  margin-bottom: 10px;
+  @include post__layout;
+  &__image{
+    width: 50%;
+    @include image;
+    .show__image--top{
+      @include image__thumbnail;
+    }
+  }
+  &__info{
+    height: 100%;
+    width: 50%;
+    &--user{
+      height: 25%;
+      width: 100%;
+      display: flex;
+      .user__userimage{
+        margin-left: 10px;
+        display: inline-block;
+        width: 60px;
+        height: 60px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        background-color: yellowgreen;
+      }
+      .user__user-status{
+        @include user-status;
+        .user__nickname{
+          @include nickname;
+        }
+      }
+    }
+    &--title{
+      @include title;
+    }
+    &--status{
+      @include status;
+      .user__post-category{
+        @include category;
+      }
+      .user__post-area{
+        height: 50%;
+        width: 100%;
+        margin-left: 10px;
+        color: $dark-gray;
+        font-size: 12px;
+        padding-top: 15px;
+      }
+    }
+    &--time{
+      @include time;
+    }
+  }
+}
+
+.user__post a{
+  @include post__link;
+}

@@ -71,7 +71,7 @@
 }
 
 .select-new{
-  height: 50px;
+  height: auto;
   width: 100%;
   background-color: $white;
   &__category{
@@ -81,32 +81,40 @@
       color: $dark-gray;
       margin-right: 40px;
     }
-    &--box{
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      padding: 7px 30px 7px 10px;
-      line-height: 1.1em;
-      border-radius: 5px;
-      background-repeat: no-repeat;
-      background-size: 12px 10px;
-      background-position: right 10px center;
-      background-color: $white;
-      border: 1px solid $light-grey;
+  }
+}
+
+.select-new__place{
+  height: auto;
+  width: 100%;
+  &--area{
+    margin: 10px 0;
+    @include new-post__space;
+    &--headline{
       color: $dark-gray;
-      width: 80%;
+      width: 103px;
+    }
+  }
+  &--country{
+    margin: 10px 0;
+    @include new-post__space;
+    &--headline{
+      color: $dark-gray;
+      width: 103px;
+    }
+  }
+  &--city{
+    margin: 10px 0;
+    @include new-post__space;
+    &--headline{
+      color: $dark-gray;
+      width: 103px;
     }
   }
 }
 
 select::-ms-expand {
   display: none;
-}
-
-.new__tags{
-  height: 50px;
-  width: 100%;
-  background-color: darkseagreen;
 }
 
 .new__money{
@@ -165,4 +173,20 @@ select::-ms-expand {
 
 .new__submit--btn:hover {
   background: $accent-color;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    padding: 7px 30px 7px 10px;
+    line-height: 1.1em;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: 12px 10px;
+    background-position: right 10px center;
+    background-color: $white;
+    border: 1px solid $light-grey;
+    color: $dark-gray;
+    width: 80%;
 }

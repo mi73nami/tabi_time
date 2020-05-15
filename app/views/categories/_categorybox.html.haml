@@ -3,3 +3,5 @@
     カテゴリー
   - @categories.each do |category|
     = link_to "#{category.name}", category_path(category.id), class:"categories__box"
+  .place-btn
+    = link_to "エリア一覧はこちら", place_index_path

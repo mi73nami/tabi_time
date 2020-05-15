@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_category
+  before_action :set_category, :set_place
   def index
     @posts = Post.includes(:user).order("created_at DESC").limit(10)
   end
@@ -10,6 +10,11 @@ class PostsController < ApplicationController
     @nickname = current_user.nickname
     @user_image = current_user.image
     @user_biography = current_user.biography
+
+    @area_array = ["エリアを選択してください"]
+    Place.where(ancestry: nil).each do |area|
+      @area_array << area.name
+    end
   end
 
   def create
@@ -35,6 +40,25 @@ class PostsController < ApplicationController
     @nickname = current_user.nickname
     @user_image = current_user.image
     @user_biography = current_user.biography
+
+    city_place = @post.place
+    country_place = city_place.parent
+
+    @area_array = []
+    Place.where(ancestry: nil).each do |area|
+      @area_array << area.name
+    end
+
+    @country_array = []
+    Place.where(ancestry: country_place.ancestry).each do |country|
+      @country_array << country
+    end
+
+    @city_array = []
+    Place.where(ancestry: city_place.ancestry).each do |city|
+      @city_array << city
+    end
+
   end
 
   def update
@@ -63,8 +87,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def get_countries
+    @countries = Place.find_by(name: "#{params[:parent_name]}", ancestry: nil).children
+  end
+
+  def get_cities
+    @cities = Place.find("#{params[:child_id]}").children
+  end
+
   private
   def post_params
-    params.require(:post).permit(:title, :text, :image, :money, :address, :category_id).merge(user_id: current_user.id)
+    params.require(:post).permit(:title, :text, :image, :money, :address, :category_id, :place_id).merge(user_id: current_user.id)
   end
 end

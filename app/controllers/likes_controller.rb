@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  
+  before_action :set_place
   def index
     @user = User.find(params[:user_id])
     @likes = Like.where(user_id: @user.id).includes(:user)

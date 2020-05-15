@@ -14,13 +14,16 @@
           .select-new__category
             %p.select-new__category--headline カテゴリ
             = form.collection_select(:category_id, @categories, :id, :name, {prompt: "カテゴリを選択してください"}, {class: "select-new__category--box"})
-          -#%select.select-new__erea{name:"erea"}
-            -#%option{value:"エリアを選択してください"}エリアを選択してください
-          -#%select.select-new__country{name:"country"}
-            -#%option{value:"国を選択してください"}国を選択してください
-          -#%select.select-new__city{name:"city"}
-            -#%option{value:"都市を選択してください"}都市を選択してください
-        -#%input.new__tags{name:"tags", type:"text"}
+          .select-new__place
+            .select-new__place--area
+              %p.select-new__place--area--headline エリア
+              = form.select :parent_name, @area_array, {selected: @post.place.parent.parent.name}, {class: "area-box",id: 'area'}
+            .select-new__place--country
+              %p.select-new__place--country--headline 国
+              = form.select :child_id, options_for_select(@country_array.map{|b| [b.name, b.id, {data:{place: b.id}}]}, {prompt: "国を選択してください", selected: @post.place.parent.id}),{}, {class: "country-box",id: 'country'}
+            .select-new__place--city
+              %p.select-new__place--city--headline 都市
+              = form.select :place_id, options_for_select(@city_array.map{|b| [b.name, b.id, {data:{place: b.id}}]}, {prompt: "都市を選択してください", selected: @post.place.id}),{}, {class: "city-box",id: 'city'}
         .new__money
           %p.new__money--headline 金額
           = form.text_field :money, class:"new__money--form", placeholder:"入場料・価格などを入力してください"

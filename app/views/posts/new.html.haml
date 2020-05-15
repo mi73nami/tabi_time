@@ -14,13 +14,10 @@
           .select-new__category
             %p.select-new__category--headline カテゴリ
             = form.collection_select(:category_id, @categories, :id, :name, {prompt: "カテゴリを選択してください"}, {class: "select-new__category--box"})
-          -#%select.select-new__erea{name:"erea"}
-            -#%option{value:"エリアを選択してください"}エリアを選択してください
-          -#%select.select-new__country{name:"country"}
-            -#%option{value:"国を選択してください"}国を選択してください
-          -#%select.select-new__city{name:"city"}
-            -#%option{value:"都市を選択してください"}都市を選択してください
-        -#%input.new__tags{name:"tags", type:"text"}
+          .select-new__place
+            .select-new__place--area
+              %p.select-new__place--area--headline エリア
+              = form.select :area, @area_array, {}, {class: "area-box",id: 'area'}
         .new__money
           %p.new__money--headline 金額
           = form.text_field :money, class:"new__money--form", placeholder:"入場料・価格などを入力してください"

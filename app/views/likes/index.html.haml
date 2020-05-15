@@ -20,7 +20,8 @@
               .user__post__info--status
                 .user__post-category 
                   = "カテゴリ：#{like.post.category.name}"
-                -#.user__post-erea 北米>アメリカ>シカゴ
+                .user__post-area
+                  = "#{@places.find(like.post.place_id).parent.parent.name} > #{@places.find(like.post.place_id).parent.name} > #{@places.find(like.post.place_id).name}"
               .user__post__info--like
                 .user__post-like
                   - if user_signed_in?
