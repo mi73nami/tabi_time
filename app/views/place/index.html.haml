@@ -1,0 +1,14 @@
+.place-page
+  .place-list
+    %ul.area__list
+      - @areas.each do |area|
+        %li.area__list--name
+          = link_to "#{area.name}", place_path(area.id)
+          %ul.country__list
+            - area.children.each do |country|
+              %li.country__list--name
+                = link_to "#{country.name}", place_path(country.id)
+                %ul.city__list
+                  - country.children.each do |city|
+                    %li.city__list--name
+                      = link_to "#{city.name}", place_path(city.id)
