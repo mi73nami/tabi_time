@@ -26,7 +26,10 @@
     .profile
       .profile__user
         .profile__user--image
-          = image_tag @user.image.url(:thumb200), class: "show__image--user"
+          - if @user.image?
+            = image_tag @user.image.url(:thumb200), class: "show__image--user"
+          - else
+            = image_tag(src = "/images/default_user.jpeg")
         .profile__user--status
           %p.user-info__nickname
             = link_to "#{@user.nickname}", "/users/#{@user.id}"

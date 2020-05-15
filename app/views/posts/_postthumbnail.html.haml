@@ -7,7 +7,10 @@
       .user__post__info
         .user__post__info--user
           .user__userimage
-            = image_tag post.user.image.url(:thumb100), class: "show__image--user"
+            - if post.user.image?
+              = image_tag post.user.image.url(:thumb100), class: "show__image--user"
+            - else
+              = image_tag(src = "/images/default_user.jpeg")
           .user__user-status
             .user__nickname
               = post.user.nickname

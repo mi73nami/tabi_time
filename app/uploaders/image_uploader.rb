@@ -49,10 +49,6 @@ class ImageUploader < CarrierWave::Uploader::Base
   # def filename
   #   "something.jpg" if original_filename
   # end
-
-  def default_url
-    'default_user.jpeg'
-  end
   
   version :thumb do
     process resize_to_fit: [500, 500]
