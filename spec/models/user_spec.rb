@@ -50,5 +50,10 @@ describe User do
       expect(user.errors[:password]).to include("は6文字以上で入力してください")
     end
 
+    it "nicknameとemail、passwordとpassword_confirmationが存在すれば登録できること" do
+      user = build(:user)
+      expect(user).to be_valid
+    end
+    
   end
 end
