@@ -38,5 +38,11 @@ describe User do
       expect(another_user.errors[:email]).to include("はすでに存在します")
     end
 
+    it " passwordが6文字以上であれば登録できること " do
+      user = build(:user, password: "000000", password_confirmation: "000000")
+      user.valid?
+      expect(user).to be_valid
+    end
+
   end
 end
