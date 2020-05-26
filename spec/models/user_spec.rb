@@ -20,5 +20,10 @@ describe User do
       expect(user.errors[:password]).to include("が入力されていません。")
     end
 
+    it "nicknameが6文字以下では登録できること " do
+      user = build(:user, nickname: "aaaaaa")
+      expect(user).to be_valid
+    end
+
   end
 end
