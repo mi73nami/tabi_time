@@ -32,5 +32,11 @@ describe Post do
       expect(post.errors[:category]).to include("を入力してください")
     end
   
+    it "place_idが無い場合は登録できないこと" do
+      post = build(:post, place_id: "")
+      post.valid?
+      expect(post.errors[:place]).to include("を入力してください")
+    end
+
   end
 end
