@@ -19,6 +19,12 @@ describe Post do
       post.valid?
       expect(post.errors[:text]).to include("を入力してください")
     end
+
+    it "user_idが無い場合は登録できないこと" do
+      post = build(:post, user_id: "")
+      post.valid?
+      expect(post.errors[:user]).to include("を入力してください")
+    end
   
   end
 end
