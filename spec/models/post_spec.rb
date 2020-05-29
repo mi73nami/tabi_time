@@ -12,6 +12,14 @@ describe Post do
         expect(post).to be_valid
       end
 
+      it "money,addressが無い場合でも登録できること" do
+        user = create(:user)
+        category = create(:category)
+        place = create(:place)
+        post = build(:post, user_id: user.id, category_id: category.id, place_id: place.id, money: nil, address: nil)
+        expect(post).to be_valid
+      end
+
     end
     
     context 'postを保存できない場合' do
